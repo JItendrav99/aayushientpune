@@ -14,7 +14,7 @@
     align-items: center;
   }
 
-  &__main-title {
+&__main-title {
     @include font-size(43px);
     text-transform: uppercase;
     margin: 0px;
