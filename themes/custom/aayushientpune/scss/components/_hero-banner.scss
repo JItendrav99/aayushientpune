@@ -1,3 +1,7 @@
 .main-banner {
     margin-top: 91px;
+
+    @include breakpoint(mobile-max) {
+        margin-top: 69px;
+    }
 }

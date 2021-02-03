@@ -5,6 +5,10 @@
   padding: 50px;
   background: linear-gradient(to right, #f90 0%, #e5322e 100%);
 
+  @include breakpoint(mobile-max) {
+    padding: 50px 15px;
+  }
+
   .row {
     display: flex;
     align-items: center;
