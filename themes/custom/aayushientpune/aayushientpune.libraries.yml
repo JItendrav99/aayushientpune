@@ -2,13 +2,12 @@ global-styling:
   version: VERSION
   js:
     js/global.js: {}
-    js/slick.js: {}
     js/slick.min.js: {}
   css:
     component:
-      css/style.css: {}
       # css/reset.css: {}
       css/colors.css: {}
+      css/style.css: {}
 bootstrap:
   js:
     /libraries/popper.js/dist/umd/popper.min.js: {}
