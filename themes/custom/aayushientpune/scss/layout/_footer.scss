@@ -4,6 +4,16 @@
     padding: 80px 0px;
     margin-top: 160px;
 
+    @include breakpoint(desktop-max) {
+        margin-top: 116px;
+        padding: 50px 0;
+    }
+
+    @include breakpoint(ipad-max) {
+        margin-top: 89px;
+        padding: 38px 0;
+    }
+
     &__bottom {
         margin: 0;
         border: none;
@@ -26,6 +36,10 @@
 }
 
 .footer {
+    @include breakpoint(mobile-max) {
+        padding: 40px 0px;
+        margin-top: 120px;
+    }
 
     a {
         font-family: $secondary-font;
@@ -44,9 +58,21 @@
         padding-bottom: 10px;
         text-transform: capitalize;
 
+        @include breakpoint(desktop-max) {
+            @include font-size(15px);
+            padding-bottom: 7px;
+            margin-bottom: 14px;
+        }
+
+        @include breakpoint(ipad-max) {
+            @include font-size(11px);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
         &:after {
             width: 25%;
-            margin-left: 0px;
+            margin-left: 0;
             background-color: $white-text;
 
             @include breakpoint(mobile-max) {
@@ -61,17 +87,25 @@
         ul {
             display: inline-block;
 
+            @include breakpoint(mobile-max) {
+                margin-top: 20px;
+            }
+
             li {
                 margin-bottom: 10px;
 
+                @include breakpoint(desktop-max) {
+                    margin-bottom: 7px;
+                }
+
+                @include breakpoint(ipad-max) {
+                    margin-bottom: 5px;
+                }
+
                 &:last-child {
-                    margin-bottom: 0px;
+                    margin-bottom: 0;
                 }
             }
-        }
-
-        @include breakpoint(mobile-max) {
-            margin-top: 20px;
         }
     }
 
@@ -80,21 +114,32 @@
             a {
                 span {
                     color: $orange-text;
-                    margin: 0px 10px;
+                    margin: 0 10px;
+
+                    @include breakpoint(desktop-max) {
+                        margin: 0 7px;
+                    }
+
+                    @include breakpoint(ipad-max) {
+                        margin: 0 5px;
+                    }
                 }
             }
 
             &:last-child {
                 span {
                     margin: 0px 9px;
+
+                    @include breakpoint(desktop-max) {
+                        margin: 0 8px;
+                    }
+
+                    @include breakpoint(ipad-max) {
+                        margin: 0 6px;
+                    }
                 }
             }
         }
-    }
-
-    @include breakpoint(mobile-max) {
-        padding: 40px 0px;
-        margin-top: 120px;
     }
 }
 
@@ -103,9 +148,25 @@
     padding: 10px;
     background-color: #1e1d1d;
 
+    @include breakpoint(desktop-max) {
+        padding: 7px;
+    }
+
+    @include breakpoint(ipad-max) {
+        padding: 5px;
+    }
+
     p {
         color: $white-text;
         text-align: center;
         @include font-size(12px);
+
+        @include breakpoint(desktop-max) {
+            @include font-size(8px);
+        }
+
+        @include breakpoint(ipad-max) {
+            @include font-size(6px);
+        }
     }
 }

@@ -2,11 +2,19 @@
 
 // our products
 .Our-product {
-  padding: 50px;
+  padding: 50px 0;
   background: linear-gradient(to right, #f90 0%, #e5322e 100%);
 
+  @include breakpoint(desktop-max) {
+    padding: 41px 0;
+  }
+
+  @include breakpoint(ipad-max) {
+    padding: 31px 0;
+  }
+
   @include breakpoint(mobile-max) {
-    padding: 50px 15px;
+    padding: 50px 0;
   }
 
   .row {
@@ -14,13 +22,17 @@
     align-items: center;
   }
 
-&__main-title {
+  &__main-title {
     @include font-size(43px);
     text-transform: uppercase;
     margin: 0px;
 
+    @include breakpoint(desktop-max) {
+      @include font-size(31px);
+    }
+
     @include breakpoint(ipad-max) {
-      @include font-size(40px);
+      @include font-size(24px);
     }
 
     @include breakpoint(custom-small-mobile-max) {
@@ -31,7 +43,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 
   &__list-item {
@@ -46,8 +58,14 @@
       display: block;
       margin-bottom: 20px;
 
+      @include breakpoint(desktop-max) {
+        @include font-size(32px);
+        margin-bottom: 14px;
+      }
+
       @include breakpoint(ipad-max) {
-        margin-bottom: 15px;
+        @include font-size(24px);
+        margin-bottom: 10px;
       }
     }
 
@@ -61,7 +79,7 @@
       box-shadow: 0px 10px 8px 0 rgba(0, 0, 0, 0.2);
     }
 
-    @include breakpoint(ipad-max) {
+    @include breakpoint(mobile-max) {
       width: 48%;
 
       &:nth-child(3) {
@@ -74,17 +92,17 @@
       }
     }
 
-    @include breakpoint(mobile-max) {
-      width: 100%;
-      margin-left: 0%;
+    // @include breakpoint(mobile-max) {
+    //   width: 100%;
+    //   margin-left: 0%;
 
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3),
-      &:nth-child(4) {
-        margin-top: 15px;
-      }
-    }
+    //   &:nth-child(1),
+    //   &:nth-child(2),
+    //   &:nth-child(3),
+    //   &:nth-child(4) {
+    //     margin-top: 15px;
+    //   }
+    // }
   }
 }
 
@@ -93,10 +111,34 @@
   margin-top: 160px;
   text-align: center;
 
+  @include breakpoint(desktop-max) {
+    margin-top: 116px;
+  }
+
+  @include breakpoint(ipad-max) {
+    margin-top: 89px;
+  }
+
   &__main-title {
     @include font-size(30px);
     padding-bottom: 15px;
     margin-bottom: 20px;
+
+    @include breakpoint(desktop-max) {
+      @include font-size(21px);
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    @include breakpoint(ipad-max) {
+      @include font-size(16px);
+      padding-bottom: 7px;
+      margin-bottom: 10px;
+    }
+
+    @include breakpoint(portrait-mobile-max) {
+      @include font-size(26px);
+    }
 
     &::after {
       width: 25%;
@@ -106,10 +148,6 @@
     &:hover::after {
       width: 30%;
     }
-
-    @include breakpoint(portrait-mobile-max) {
-      @include font-size(26px);
-    }
   }
 
   &__list-item {
@@ -117,6 +155,14 @@
       width: 100%;
       height: auto;
       padding: 20px 15px;
+
+      @include breakpoint(desktop-max) {
+        padding: 14px 10px;
+      }
+
+      @include breakpoint(ipad-max) {
+        padding: 10px 7px;
+      }
     }
   }
 }
@@ -137,6 +183,14 @@
 .our-vision {
   position: relative;
   margin-top: 160px;
+
+  @include breakpoint(desktop-max) {
+    margin-top: 116px;
+  }
+
+  @include breakpoint(ipad-max) {
+    margin-top: 89px;
+  }
 
   &:after {
     position: absolute;
@@ -174,19 +228,31 @@
   }
 
   &__text-box {
-    padding: 0px 30px;
+    padding: 0 30px;
+
+    @include breakpoint(desktop-max) {
+      padding: 0 21px;
+    }
+
+    @include breakpoint(ipad-max) {
+      padding: 0 16px;
+    }
+
+    @include breakpoint(mobile-max) {
+      padding: 40px 15px;
+    }
 
     p {
       text-transform: lowercase;
       text-align: justify;
 
-      @include breakpoint(desktop-mid) {
+      @include breakpoint(desktop-max) {
         @include font-size(13px);
       }
-    }
 
-    @include breakpoint(mobile-max) {
-      padding: 40px 15px;
+      @include breakpoint(ipad-max) {
+        @include font-size(10px);
+      }
     }
   }
 
@@ -194,6 +260,18 @@
     @include font-size(30px);
     padding-bottom: 10px;
     margin-bottom: 20px;
+
+    @include breakpoint(desktop-max) {
+      @include font-size(21px);
+      padding-bottom: 7px;
+      margin-bottom: 14px;
+    }
+
+    @include breakpoint(ipad-max) {
+      @include font-size(16px);
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
 
     &::after {
       width: 20%;
@@ -203,6 +281,10 @@
 
     &:hover::after {
       width: 55%;
+
+      @include breakpoint(desktop-max) {
+        width: 39%;
+      }
     }
   }
 
@@ -250,29 +332,53 @@
 .why-choose-us {
   position: relative;
   margin-top: 160px;
-  padding: 100px 0px;
+  padding: 100px 0;
   color: $white-text;
   background-image: url('#{$images-path}/why-choose-us/Why-choose-us-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0%;
 
+  @include breakpoint(desktop-max) {
+    margin-top: 116px;
+    padding: 72px 0;
+  }
+
+  @include breakpoint(ipad-max) {
+    margin-top: 89px;
+    padding: 55px 0;
+  }
+
+  @include breakpoint(portrait-mobile-max) {
+    padding: 80px 0px;
+  }
+
   &__block-title {
     padding-bottom: 15px;
     margin-bottom: 60px;
 
-    &::after {
-      width: 15%;
-      transition: 0.3s;
-      margin-left: 0px;
+    @include breakpoint(desktop-max) {
+      padding-bottom: 10px;
+      margin-bottom: 43px;
     }
 
-    &:hover::after {
-      width: 20%;
+    @include breakpoint(ipad-max) {
+      padding-bottom: 7px;
+      margin-bottom: 33px;
     }
 
     @include breakpoint(portrait-mobile-max) {
       margin-bottom: 40px;
+    }
+
+    &::after {
+      width: 15%;
+      transition: 0.3s;
+      margin-left: 0;
+    }
+
+    &:hover::after {
+      width: 20%;
     }
   }
 
@@ -280,6 +386,14 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
+
+    @include breakpoint(desktop-max) {
+      margin-top: 29px;
+    }
+
+    @include breakpoint(ipad-max) {
+      margin-top: 22px;
+    }
 
     @include breakpoint(mobile-max) {
       margin-top: 0%;
@@ -297,6 +411,20 @@
     padding: 15px;
     margin-right: 2%;
 
+    @include breakpoint(desktop-max) {
+      padding: 10px;
+    }
+
+    @include breakpoint(ipad-max) {
+      padding: 7px;
+    }
+
+    @include breakpoint(mobile-max) {
+      width: 100%;
+      margin-right: 0%;
+      margin-top: 3%;
+    }
+
     &:hover {
       border: 5px solid $light-border;
       outline: 0.5px solid transparent;
@@ -307,7 +435,17 @@
       display: flex;
       align-self: center;
       @include font-size(50px);
-      margin: 0px 8px;
+      margin: 0 8px;
+
+      @include breakpoint(desktop-max) {
+        @include font-size(36px);
+        margin: 0 6px;
+      }
+
+      @include breakpoint(ipad-max) {
+        @include font-size(27px);
+        margin: 0 4px;
+      }
     }
 
     p {
@@ -316,27 +454,16 @@
       margin-bottom: 0px;
 
       @include breakpoint(desktop-max) {
-        @include font-size(20px);
+        @include font-size(19px);
       }
 
       @include breakpoint(ipad-max) {
-        @include font-size(18px);
+        @include font-size(14px);
       }
-
     }
 
     &:last-child {
       margin-right: 0%;
     }
-
-    @include breakpoint(mobile-max) {
-      width: 100%;
-      margin-right: 0%;
-      margin-top: 3%;
-    }
-  }
-
-  @include breakpoint(portrait-mobile-max) {
-    padding: 80px 0px;
   }
 }

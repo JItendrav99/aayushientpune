@@ -4,6 +4,11 @@
     margin-bottom: 20px;
     font-weight: bolder;
 
+    @include breakpoint(desktop-max) {
+        @include font-size(31px);
+        margin-bottom: 17.5px;
+    }
+
     &--white {
         color: $white-text;
     }
