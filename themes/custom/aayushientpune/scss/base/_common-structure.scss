@@ -39,9 +39,16 @@
 }
 
 // breadcrumb-list
+.no-webp .breadcrumb-wrap {
+    background-image: url("https://ik.imagekit.io/ybfnkhj4f3c/breadcrumb/01.breadcrumb-bg_aFCLrX9Xx.jpg");
+}
+  
+.webp .breadcrumb-wrap {
+    background-image: url("https://ik.imagekit.io/ybfnkhj4f3c/breadcrumb/breadcrumb__Webp_/01.breadcrumb-bg_2EOFiTa2Xo.webp");
+}
+
 .breadcrumb-wrap {
     padding: 70px 0px;
-    background-image: url("#{$images-path}/breadcrumb/01.breadcrumb-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 

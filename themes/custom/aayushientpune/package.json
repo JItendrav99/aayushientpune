@@ -22,5 +22,8 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "imagemin": "^7.0.1",
+    "imagemin-webp": "^6.0.0"
+  }
 }

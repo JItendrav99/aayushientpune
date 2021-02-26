@@ -329,12 +329,19 @@
 }
 
 // why-choose-us
+.no-webp .why-choose-us {
+  background-image: url('https://ik.imagekit.io/ybfnkhj4f3c/why-choose-us/Why-choose-us-bg_7veaBHcg0.jpg');
+}
+
+.webp .why-choose-us {
+  background-image: url('https://ik.imagekit.io/ybfnkhj4f3c/why-choose-us/Why-choose-us-bg_T-4OQm7cT.webp');
+}
+
 .why-choose-us {
   position: relative;
   margin-top: 160px;
   padding: 100px 0;
   color: $white-text;
-  background-image: url('#{$images-path}/why-choose-us/Why-choose-us-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0%;

@@ -3,6 +3,7 @@ global-styling:
   js:
     js/global.js: {}
     js/slick.min.js: {}
+    js/modernizr/modernizr-custom.js: {}
   css:
     component:
       # css/reset.css: {}
